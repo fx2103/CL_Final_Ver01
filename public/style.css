@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and overall container styling */
+body {
+    background-color: #e6f5e6; /* Soft light green */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header styling */
+.chat-header {
+    font-size: 2.4rem;
+    color: #4a7a4a; /* Dark green */
+    margin-bottom: 1rem;
+}
+
+/* Main container styling */
+.container {
+    display: flex;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat feed box styling */
+.chat-feed {
+    width: 100%;
+    background-color: #f2f9f2; /* Very light green */
+    border: 2px solid #c6e6c6; /* Border color similar to background */
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 300px;
+    padding: 1rem;
+}
+
+.chat-box {
+    color: #333;
+}
+
+/* Message styling */
+.chat-box p {
+    background-color: #d9efd9;
+    color: #4a7a4a;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Input section styling */
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.chat-input input, 
+.chat-input select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #c6e6c6;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.chat-input input:focus,
+.chat-input select:focus {
+    border-color: #4a7a4a;
+}
+
+/* Dropdown menu styling */
+#dropdownMenu {
+    background-color: #ffffff;
+    color: #4a7a4a;
+}
+
+/* Send button styling */
+#send-button {
+    padding: 0.5rem 1rem;
+    background-color: #4a7a4a; /* Green */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #365b36; /* Darker green */
+}
