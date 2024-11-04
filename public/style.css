@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/bg_color.png?v=1730716777504');
+    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/background_image.jpg?v=1730712168372');
     background-size: cover;       /* Adjusts the image to cover the entire area */
     background-position: center;  /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -98,4 +98,7 @@ body {
 #sketch-holder {
   position: fixed;
   bottom: 0;
+  left: 50%;               /* Move the element to the center horizontally */
+  transform: translateX(-50%); /* Pull it back by half its width to center */
+  width: 100%;
 }
