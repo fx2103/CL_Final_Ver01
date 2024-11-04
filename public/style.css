@@ -7,20 +7,17 @@
 
 /* Body and overall container styling */
 body {
-    background-color: #e6f5e6; /* Soft light green */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-}
-.background{
-    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/background_image.jpg');
+  background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/background_image.jpg');
     background-size: cover;       /* Adjusts the image to cover the entire area */
     background-position: center;  /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 1920px; 
 }
+
 /* Header styling */
 .chat-header {
     font-size: 2.4rem;
@@ -28,19 +25,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Main container styling */
-.container {
-    display: flex;
-    gap: 2rem;
-    max-width: 800px;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 /* Chat feed box styling */
 .chat-feed {
@@ -100,7 +84,7 @@ body {
 #send-button {
     padding: 0.5rem 1rem;
     background-color: #4a7a4a; /* Green */
-    color: #fff;
+    color: #fffff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
