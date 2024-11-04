@@ -3,10 +3,10 @@ let socket;
 let draggingFlower = null; // Variable to track the flower being dragged
 
 function preload(){
-  bgImage = loadImage('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/plots.png?v=1730716912698');
+  bgImage = loadImage('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/pots_02.png?v=1730717408217');
 }
 function setup() {
-  createCanvas(windowWidth, windowHeight).parent('sketch-holder');
+  createCanvas(windowWidth, windowHeight/2).parent('sketch-holder');
   // background(0, 250, 150);
 
   // Ensure window.socket is defined before using it
