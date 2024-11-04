@@ -5,9 +5,10 @@ let draggingFlower = null; // Variable to track the flower being dragged
 function preload(){
   bgImage = loadImage('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/pots_02.png?v=1730717408217');
 }
+
 function setup() {
   createCanvas(windowWidth, windowHeight/2).parent('sketch-holder');
-  // background(0, 250, 150);
+  image(bgImage, 0, 0, width, height);
 
   // Ensure window.socket is defined before using it
   if (window.socket) {
@@ -34,7 +35,6 @@ function createNewFlower(data) {
 
 function draw() {
   image(bgImage, 0, 0, width, height);
-  //background(0, 250, 150);
   for (let flower of flowers) {
     // Update position if the flower is being dragged
     if (flower.isDragging) {
