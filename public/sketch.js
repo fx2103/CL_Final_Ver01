@@ -3,7 +3,7 @@ let socket;
 let draggingFlower = null; // Variable to track the flower being dragged
 
 function preload(){
-  bgImage = loadImage('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/pots_v03.png?v=1730723065685');
+  bgImage = loadImage('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/pots_v05.png?v=1730724313078');
 }
 
 function setup() {
@@ -99,4 +99,10 @@ function mouseReleased() {
     draggingFlower.isDragging = false;
     draggingFlower = null;
   }
+}
+
+// Resize the canvas automatically when the window gets resize
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight/2); 
+  background(bgImage); 
 }
