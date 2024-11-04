@@ -85,7 +85,9 @@ body {
 #send-button {
   position:fixed;
   top: 17vh;   /* 20% of the viewport height from the top */
-  left: 120vw; 
+  left: 85vw; 
+  width: 100px;
+  height: 50px;
     padding: 0.5rem 1rem;
     background-color: #4a7a4a; /* Green */
     color: #ffffff;
