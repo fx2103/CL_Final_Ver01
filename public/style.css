@@ -94,17 +94,17 @@ body {
     position: fixed; /* Keep the container fixed on the screen */
     top: 20px; /* Move the entire container down from the top of the viewport */
     right: 20px; /* Move the container in from the right of the viewport */
-    width: 300px; /* Auto width */
+    width: auto; /* Auto width */
     height: auto; /* Auto height */
 }
 
 #send-button {
     position: absolute; /* Position it relative to the container */
-    top: 163px; /* Adjust this value to move the button up or down */
+    top: 215px; /* Adjust this value to move the button up or down */
     left: 90%; /* Center horizontally in the container */
     transform: translateX(-50%); /* Offset to perfectly center */
-    width: 100px;
-    height: 50px;
+    width: 150px;
+    height: 65px;
     padding: 0.5rem 1rem;
     background-color: #4a7a4a; /* Green */
     color: #ffffff;
@@ -124,8 +124,8 @@ body {
     top: 0; /* Keep at the top of the container */
     left: 90%; /* Center horizontally in the container */
     transform: translateX(-50%); /* Offset to perfectly center */
-    width: 350px; /* Adjust width as needed */
-    height: 350px; /* Adjust height as needed */
+    width: 450px; /* Adjust width as needed */
+    height: 450px; /* Adjust height as needed */
     z-index: 1; /* Ensure the background image is below the button */
 }
 
