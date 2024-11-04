@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/background_v05.png?v=1730724284975');
+    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/bg_color.png?v=1730716777504');
     background-size: cover;       /* Adjusts the image to cover the entire area */
     background-position: center;  /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -81,18 +81,28 @@ body {
     color: #4a7a4a;
 }
 
+#lowres-img{
+    position: fixed; /* Keep the container fixed on the screen */
+    top: 0px; /* Move the entire container down from the top of the viewport */
+    left: 0px; /* Move the container in from the right of the viewport */
+    width: 600px; /* Auto width */
+    height: 600px; /* Auto height */
+}
+
 /* Send button styling */
 #button-container {
     position: fixed; /* Keep the container fixed on the screen */
-
-    width: auto; /* Auto width */
+    top: 20px; /* Move the entire container down from the top of the viewport */
+    right: 20px; /* Move the container in from the right of the viewport */
+    width: 300px; /* Auto width */
     height: auto; /* Auto height */
 }
 
 #send-button {
     position: absolute; /* Position it relative to the container */
-    top: 8vh; /* Center vertically in the container */
-    left: 80vw; /* Center horizontally in the container */
+    top: 163px; /* Adjust this value to move the button up or down */
+    left: 90%; /* Center horizontally in the container */
+    transform: translateX(-50%); /* Offset to perfectly center */
     width: 100px;
     height: 50px;
     padding: 0.5rem 1rem;
@@ -111,8 +121,9 @@ body {
 
 #send-button-bgimg {
     position: absolute; /* Position it relative to the container */
-    top: 0vh; /* Position at the top of the container */
-    left: 73vw; /* Position at the left of the container */
+    top: 0; /* Keep at the top of the container */
+    left: 90%; /* Center horizontally in the container */
+    transform: translateX(-50%); /* Offset to perfectly center */
     width: 350px; /* Adjust width as needed */
     height: 350px; /* Adjust height as needed */
     z-index: 1; /* Ensure the background image is below the button */
