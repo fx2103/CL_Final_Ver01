@@ -90,10 +90,10 @@ body {
 }
 
 /* Send button styling */
-#button-container {
+#send-button-container {
     position: fixed; /* Keep the container fixed on the screen */
-    top: 20px; /* Move the entire container down from the top of the viewport */
-    right: 20px; /* Move the container in from the right of the viewport */
+    top: 0px; /* Move the entire container down from the top of the viewport */
+    right: 250px; /* Move the container in from the right of the viewport */
     width: auto; /* Auto width */
     height: auto; /* Auto height */
 }
@@ -128,6 +128,46 @@ body {
     height: 450px; /* Adjust height as needed */
     z-index: 1; /* Ensure the background image is below the button */
 }
+
+#msg-input-container {
+    position: fixed; /* Keep the container fixed on the screen */
+    top: 0px; /* Move the entire container down from the top of the viewport */
+    right: 600px; /* Move the container in from the right of the viewport */
+    width: auto; /* Auto width */
+    height: auto; /* Auto height */
+}
+
+#msg-input {
+    position: absolute; /* Position it relative to the container */
+    top: 225px; /* Adjust this value to move the button up or down */
+    left: 90%; /* Center horizontally in the container */
+    transform: translateX(-50%); /* Offset to perfectly center */
+    width: 150px;
+    height: 65px;
+    padding: 0.5rem 1rem;
+    background-color: #4a7a4a; /* Green */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2; /* Ensure the button is above the background image */
+}
+
+#msg-input:hover {
+    background-color: #365b36; /* Darker green */
+}
+
+#msg-input-bgimg {
+    position: absolute; /* Position it relative to the container */
+    top: 0; /* Keep at the top of the container */
+    left: 90%; /* Center horizontally in the container */
+    transform: translateX(-50%); /* Offset to perfectly center */
+    width: 450px; /* Adjust width as needed */
+    height: 450px; /* Adjust height as needed */
+    z-index: 1; /* Ensure the background image is below the button */
+}
+
 
 #sketch-holder {
   position: fixed;
