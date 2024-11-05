@@ -246,6 +246,37 @@ body {
     z-index: 1; /* Ensure the background image is below the button */
 }
 
+#screenshot-button-container {
+    position: fixed; /* Keep the container fixed on the screen */
+    top: 0px; /* Move the entire container down from the top of the viewport */
+    right: 950px; /* Move the container in from the right of the viewport */
+    width: auto; /* Auto width */
+    height: auto; /* Auto height */
+}
+
+#screenshot-button{
+    position: absolute; /* Position it relative to the container */
+    top: 500px; /* Adjust this value to move the button up or down */
+    left: 90%; 
+    transform: translateX(-50%); /* Offset to perfectly center */
+    width: 150px;
+    height: 60px;
+    background-color: #f4e9b8;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid #5b5349;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10; /* Ensure the button is above the background image */
+}
+
+#screenshot-button:hover {
+    background-color: #DEB887; 
+}
+
 
 #sketch-holder {
   position: fixed;
