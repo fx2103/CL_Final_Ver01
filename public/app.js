@@ -39,12 +39,11 @@ window.addEventListener('load', function () {
   
     let screenshotButton = document.getElementById('screenshot-button');
     screenshotButton.addEventListener('click', () =>{
-      html2canvas(document.body).then((canvas) => {
-      let screenshot = canvas.toDataURL("image/png");
-      let downloadLink = document.createElement("a");
-      downloadLink.href = screenshot;
-      downloadLink.download = "screenshot.png";
-      downloadLink.click();
+      html2canvas(document.body).then( canvas => {
+        let link = document.createElement('a');
+        link.download = 'screenshot.png';
+        link.href = canvas.toDataURL();
+        link.click();
       });
     })
 });
