@@ -142,12 +142,15 @@ body {
     top: 225px; /* Adjust this value to move the button up or down */
     left: 90%; /* Center horizontally in the container */
     transform: translateX(-50%); /* Offset to perfectly center */
-    width: 150px;
+    width: 250px;
     height: 65px;
+  background-color: #f4e9b8;
+    color: #4a7a4a;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
-    background-color: #4a7a4a; /* Green */
-    color: #ffffff;
-    border: none;
+    background-color: ; 
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
