@@ -100,15 +100,14 @@ body {
 
 #send-button {
     position: absolute; /* Position it relative to the container */
-    top: 215px; /* Adjust this value to move the button up or down */
+    top: 155px; /* Adjust this value to move the button up or down */
     left: 90%; /* Center horizontally in the container */
     transform: translateX(-50%); /* Offset to perfectly center */
     width: 150px;
     height: 65px;
     padding: 0.5rem 1rem;
-    background-color: #4a7a4a; /* Green */
-    color: #ffffff;
-    border: none;
+    background-color: #f4e9b8; 
+    border: 2px solid #5b5349;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -116,7 +115,7 @@ body {
 }
 
 #send-button:hover {
-    background-color: #365b36; /* Darker green */
+    background-color: #DEB887; 
 }
 
 #send-button-bgimg {
