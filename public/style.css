@@ -256,7 +256,7 @@ body {
 
 #screenshot-button{
     position: absolute; /* Position it relative to the container */
-    top: 500px; /* Adjust this value to move the button up or down */
+    top: 200px; /* Adjust this value to move the button up or down */
     left: 90%; 
     transform: translateX(-50%); /* Offset to perfectly center */
     width: 150px;
