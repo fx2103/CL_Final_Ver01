@@ -36,4 +36,15 @@ window.addEventListener('load', function () {
         nameInput.value = '';
         msgInput.value = '';
     });
+  
+    let screenshotButton = document.getElementById('screenshot-button');
+    screenshotButton.addEventListener('click', () =>{
+      html2canvas(document.body).then((canvas) => {
+      let screenshot = canvas.toDataURL("image/png");
+      let downloadLink = document.createElement("a");
+      downloadLink.href = screenshot;
+      downloadLink.download = "screenshot.png";
+      downloadLink.click();
+      });
+    })
 });
