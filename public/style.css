@@ -133,7 +133,7 @@ body {
 
 #msg-input {
     position: absolute; /* Position it relative to the container */
-    top: 174px; /* Adjust this value to move the button up or down */
+    top: 176px; /* Adjust this value to move the button up or down */
     left: 90%; 
     transform: translateX(-50%); /* Offset to perfectly center */
     width: 250px;
@@ -167,18 +167,18 @@ body {
 #dropdownMenu-container {
     position: fixed; /* Keep the container fixed on the screen */
     top: 0px; /* Move the entire container down from the top of the viewport */
-    right: 800px; /* Move the container in from the right of the viewport */
+    right: 710px; /* Move the container in from the right of the viewport */
     width: auto; /* Auto width */
     height: auto; /* Auto height */
 }
 
 #dropdownMenu {
     position: absolute; /* Position it relative to the container */
-    top: 174px; /* Adjust this value to move the button up or down */
+    top: 166px; /* Adjust this value to move the button up or down */
     left: 30%; 
     transform: translateX(-50%); /* Offset to perfectly center */
     width: 150px;
-    height: 65px;
+    height: 60px;
     background-color: #f4e9b8;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
@@ -199,6 +199,47 @@ body {
     position: absolute; /* Position it relative to the container */
     top: 0; /* Keep at the top of the container */
     left: 30%; /* Center horizontally in the container */
+    transform: translateX(-50%); /* Offset to perfectly center */
+    width: 350px; /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
+    z-index: 1; /* Ensure the background image is below the button */
+}
+
+#name-input-container {
+    position: fixed; /* Keep the container fixed on the screen */
+    top: 0px; /* Move the entire container down from the top of the viewport */
+    right: 950px; /* Move the container in from the right of the viewport */
+    width: auto; /* Auto width */
+    height: auto; /* Auto height */
+}
+
+#name-input {
+    position: absolute; /* Position it relative to the container */
+    top: 175px; /* Adjust this value to move the button up or down */
+    left: 90%; 
+    transform: translateX(-50%); /* Offset to perfectly center */
+    width: 150px;
+    height: 60px;
+    background-color: #f4e9b8;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 2px solid #5b5349;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2; /* Ensure the button is above the background image */
+}
+
+#name-input:hover {
+    background-color: #DEB887; 
+}
+
+#name-input-bgimg {
+    position: absolute; /* Position it relative to the container */
+    top: 0; /* Keep at the top of the container */
+    left: 90%; 
     transform: translateX(-50%); /* Offset to perfectly center */
     width: 350px; /* Adjust width as needed */
     height: 350px; /* Adjust height as needed */
