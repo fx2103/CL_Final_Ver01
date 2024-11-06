@@ -58,10 +58,9 @@ function drawFlower(x, y, type) {
   push();
   translate(x, y);
   
-  let stemlength = random (70,100);
   stroke(34, 139, 34); 
   strokeWeight(4);
-  line(0, 0, 0, stemlength); 
+  line(0, 0, 0, 70); 
   
   noStroke(); 
   
