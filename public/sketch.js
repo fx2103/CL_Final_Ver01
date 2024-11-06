@@ -57,14 +57,22 @@ function draw() {
 function drawFlower(x, y, type) {
   push();
   translate(x, y);
+  
+  let stemlength = random (70,100);
+  stroke(34, 139, 34); 
+  strokeWeight(4);
+  line(0, 0, 0, stemlength); 
+  
+  noStroke(); 
+  
   if (type === 'flower_01') {
     fill(255, 204, 0);
     for (let i = 0; i < 10; i++) {
-      ellipse(0, 10, 15, 30);
+      ellipse(0, 25, 30, 50);
       rotate(PI / 5);
     }
     fill(255, 150, 0);
-    ellipse(0, 0, 20, 20);
+    ellipse(0, 0, 30, 30);
   } else if (type === 'flower_02') {
     fill(200, 50, 150);
     beginShape();
