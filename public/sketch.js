@@ -73,7 +73,7 @@ function drawFlower(x, y, type) {
     fill(255, 150, 0);
     ellipse(0, 0, 30, 30);
   } else if (type === 'flower_02') {
-    fill(200, 50, 150);
+    fill(171, 130,197);
     beginShape();
     for (let i = 0; i < 16; i++) {
       let angle = map(i, 0, 16, 0, TWO_PI);
@@ -83,7 +83,7 @@ function drawFlower(x, y, type) {
       vertex(x, y);
     }
     endShape(CLOSE);
-    fill(255, 100, 150);
+    fill(87, 6, 140);
     ellipse(0, 0, 20, 20);
     } else if (type === 'flower_03') {
     fill(255, 210, 200); 
@@ -95,24 +95,20 @@ function drawFlower(x, y, type) {
     ellipse(0, 0, 30, 30);
   } else if (type === 'flower_04') {
     fill(255, 100, 100); 
-    for (let i = 0; i < 12; i++) {
-      ellipse(0, 15, 20, 50);
-      rotate(PI / 6);
+    for (let i = 0; i < 20; i++) {
+      ellipse(0, 15, 8, 50);
+      rotate(PI / 10);
     }
-    beginShape();
-    vertex(-10, 0);
-    bezierVertex(-15, -20, 15, -20, 10, 0);
-    bezierVertex(5, -10, -5, -10, -10, 0);
-    endShape(CLOSE);
+    fill(255, 240, 170); 
+    ellipse(0, 0, 20, 20);
   } else if (type === 'flower_05') {
-    // Sunflower-like flower
-    fill(255, 204, 0); // Yellow petals
+    fill(255,170, 0); 
     for (let i = 0; i < 16; i++) {
-      ellipse(0, 15, 8, 25);
+      ellipse(0, 25, 18, 35);
       rotate(PI / 8);
     }
-    fill(139, 69, 19); // Brown center
-    ellipse(0, 0, 20, 20);
+    fill(139, 69, 19); 
+    ellipse(0, 0, 50, 50);
   }
   pop();
 }
