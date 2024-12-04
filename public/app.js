@@ -1,49 +1,83 @@
 window.addEventListener("load", function () {
-  let socket = io();
+  let socket;
 
-  socket.on("connect", function () {
-    console.log("Connected to the server");
-  });
+  const welcomePage = document.getElementById('welcomePage');
+  const mainPage = document.getElementById('mainPage');
+  const enterButton = document.getElementById('enterButton');
+  const visitorButton = document.getElementById('visitorButton');
+  const nameInput = document.getElementById("name-input");
+  const msgInput = document.getElementById("msg-input");
+  const plantDropDown = document.getElementById("dropdownMenu");
+  const flowerid = 0;
+  let isValidInput = false;
 
-  // Listen for initial list of flowers from the server
-  socket.on("initialFlowers", function (flowers) {
-    flowers.forEach((flower) => {
-      createNewFlower(flower); // Ensure this function exists in sketch.js
+  function initializeSocket() {
+    socket = io();  // 初始化 socket 连接
+
+    socket.on("connect", function () {
+      console.log("Connected to the server");
     });
-  });
 
-  // Listen for new flower data from the server
-  socket.on("msg", function (data) {
-    // Directly create a new flower only when a new one is sent from the server
-    createNewFlower(data);
-  });
+    //接收服务器广播的花朵数据并创建花朵
+    // socket.on("msg", function (data) {
+    //   console.log("New flower data received:", data);
+    //   createNewFlower(data);  // 创建花朵
+    // });
 
-  let nameInput = document.getElementById("name-input");
-  let msgInput = document.getElementById("msg-input");
-  let plantDropDown = document.getElementById("dropdownMenu");
-  let sendButton = document.getElementById("send-button");
-
-  sendButton.addEventListener("click", function () {
-    let curName = nameInput.value;
-    let curMsg = msgInput.value;
-    let curPlant = plantDropDown.value;
-    let msgObj = { name: curName, plant: curPlant, msg: curMsg };
-
-    // Send the message object to the server
-    socket.emit("msg", msgObj);
-
-    // Clear input fields (optional)
-    nameInput.value = "";
-    msgInput.value = "";
-  });
-
-  let screenshotButton = document.getElementById("screenshot-button");
-  screenshotButton.addEventListener("click", () => {
-    html2canvas(document.body).then((canvas) => {
-      let link = document.createElement("a");
-      link.download = "screenshot.png";
-      link.href = canvas.toDataURL();
-      link.click();
+    socket.once("initialFlowers", function (flowers) {
+      flowers.forEach((flower) => {
+        createNewFlower(flower);  // 初始化花朵
+      });
     });
+
+    window.socket = socket;  // 将 socket 对象存储到全局变量
+  }
+
+  initializeSocket();
+
+  // 输入框验证函数
+  function checkInputs() {
+    const name = nameInput.value.trim();
+    const message = msgInput.value.trim();
+    const plant = plantDropDown.value;
+
+    if (name && message && plant !== "default") {
+      isValidInput = true;
+      enterButton.disabled = false;
+    } else {
+      isValidInput = false;
+      enterButton.disabled = true;
+    }
+  }
+
+  // 输入框事件监听
+  nameInput.addEventListener("input", checkInputs);
+  msgInput.addEventListener("input", checkInputs);
+  plantDropDown.addEventListener("change", checkInputs);
+
+ 
+  enterButton.addEventListener('click', function () {
+    if (isValidInput) {
+      isFlowerDataSent = true;  // 防止多次点击
+      welcomePage.style.display = 'none';
+      mainPage.style.display = 'block';
+
+      const name = nameInput.value.trim();
+      const message = msgInput.value.trim();
+      const plant = plantDropDown.value;
+      const ifplanted = false;
+      // 将花朵数据发送到服务器
+      const flowerData = { name, message: message, flowertype:plant, x: 210, y: 100 ,ifplanted};
+      window.socket=socket;
+      socket.emit("msg", flowerData);  // 发送花朵数据到服务器
+      console.log("Sending flower data:", flowerData);
+      
+    }
+  });
+
+  // 游客按钮点击事件
+  visitorButton.addEventListener('click', function () {
+    welcomePage.style.display = 'none';
+    mainPage.style.display = 'block';
   });
 });

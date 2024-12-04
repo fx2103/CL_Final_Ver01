@@ -1,285 +1,112 @@
+/* Reset some default margin and padding */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-}
+  }
 
-/* Body and overall container styling */
-body {
+  /* Body and overall container styling */
+  body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image:url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/bg_color.png?v=1730716777504');
-    background-size: cover;       /* Adjusts the image to cover the entire area */
-    background-position: center;  /* Centers the image */
+    background-image: url('https://cdn.glitch.global/8c93b6c9-9dc6-4089-8240-b26b2c58c581/bg_color.png?v=1730716777504');
+    background-size: cover; /* Adjusts the image to cover the entire area */
+    background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     font-family: Impact, sans-serif;
-}
-
-/* Header styling */
-.chat-header {
-    font-size: 2.4rem;
-    color: #4a7a4a; /* Dark green */
-    margin-bottom: 1rem;
-}
-
-
-/* Chat feed box styling */
-.chat-feed {
-    width: 100%;
-    background-color: #f2f9f2; /* Very light green */
-    border: 2px solid #5b5349; /* Border color similar to background */
-    border-radius: 10px;
-    overflow-y: auto;
-    height: 300px;
-    padding: 1rem;
-}
-
-.chat-box {
-    color: #333;
-}
-
-/* Message styling */
-.chat-box p {
-    background-color: #d9efd9;
-    color: #4a7a4a;
-    padding: 0.5rem;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Input section styling */
-.chat-input {
+  }
+  
+  /* Container for the entire welcome section */
+  #welcomePage {
     display: flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
     width: 100%;
-}
-
-.chat-input input, 
-.chat-input select {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #name-input-container,
+  #msg-input-container,
+  #dropdownMenu-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+  }
+  
+  input, select {
+    width: 100%;
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 8px;
     border: 2px solid #c6e6c6;
     outline: none;
     transition: border-color 0.2s;
-    width: 100%;
-  font-family: Verdana, sans-serif;
-}
-
-.chat-input input:focus,
-.chat-input select:focus {
+    font-family: Verdana, sans-serif;
+  }
+  
+  input:focus, select:focus {
     border-color: #4a7a4a;
-}
-
-
-
-#lowres-img{
-    position: fixed; /* Keep the container fixed on the screen */
-    top: 0px; /* Move the entire container down from the top of the viewport */
-    left: 0px; /* Move the container in from the right of the viewport */
-    width: 500px; /* Auto width */
-    height: 500px; /* Auto height */
-}
-
-/* Send button styling */
-#send-button-container {
-    position: fixed; /* Keep the container fixed on the screen */
-    top: 0px; /* Move the entire container down from the top of the viewport */
-    right: 150px; /* Move the container in from the right of the viewport */
-    width: auto; /* Auto width */
-    height: auto; /* Auto height */
-}
-
-#send-button {
-    position: absolute; /* Position it relative to the container */
-    top: 158px; /* Adjust this value to move the button up or down */
-    left: 90%; /* Center horizontally in the container */
-    transform: translateX(-50%); /* Offset to perfectly center */
+  }
+  
+  /* Button styling */
+  button {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  
+  /* Position for sketch holder */
+  #sketch-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* 确保画布在最底层 */
+  }
+  
+  /* Extra styling for better readability */
+  h1 {
+    font-size: 2rem;
+    color: #4a7a4a;
+  }
+  
+  #send-button, #screenshot-button {
     width: 150px;
     height: 60px;
     padding: 0.5rem 1rem;
-    background-color: #f4e9b8; 
-    border: 2px solid #5b5349;
-    border-radius: 8px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2; /* Ensure the button is above the background image */
-}
-
-#send-button:hover {
-    background-color: #DEB887; 
-}
-
-#screenshot-button {
-    position: absolute; /* Position it relative to the container */
-    top: 283px; /* Adjust this value to move the button up or down */
-    left: 90%; /* Center horizontally in the container */
-    transform: translateX(-50%); /* Offset to perfectly center */
-    transform-origin: top left;
-    transform: rotate(3deg) translate(-73px, 0px);
-    width: 150px;
-    height: 60px;
-    padding: 0.5rem 1rem;
-    background-color: #f4e9b8; 
-    border: 2px solid #5b5349;
-    border-radius: 8px;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2; /* Ensure the button is above the background image */
-}
-
-#screenshot-button:hover {
-    background-color: #DEB887; 
-}
-
-#send-button-bgimg {
-    position: absolute; /* Position it relative to the container */
-    top: 0; /* Keep at the top of the container */
-    left: 90%; /* Center horizontally in the container */
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 400px; /* Adjust width as needed */
-    height: 400px; /* Adjust height as needed */
-    z-index: 1; /* Ensure the background image is below the button */
-}
-
-#msg-input-container {
-    position: fixed; /* Keep the container fixed on the screen */
-    top: 0px; /* Move the entire container down from the top of the viewport */
-    right: 430px; /* Move the container in from the right of the viewport */
-    width: auto; /* Auto width */
-    height: auto; /* Auto height */
-}
-
-#msg-input {
-    position: absolute; /* Position it relative to the container */
-    top: 176px; /* Adjust this value to move the button up or down */
-    left: 90%; 
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 250px;
-    height: 60px;
     background-color: #f4e9b8;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
     border: 2px solid #5b5349;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
     border-radius: 8px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s;
-    z-index: 2; /* Ensure the button is above the background image */
-}
-
-#msg-input:hover {
-    background-color: #DEB887; 
-}
-
-#msg-input-bgimg {
-    position: absolute; /* Position it relative to the container */
-    top: 0; /* Keep at the top of the container */
-    left: 90%; 
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 350px; /* Adjust width as needed */
-    height: 350px; /* Adjust height as needed */
-    z-index: 1; /* Ensure the background image is below the button */
-}
-
-#dropdownMenu-container {
-    position: fixed; /* Keep the container fixed on the screen */
-    top: 0px; /* Move the entire container down from the top of the viewport */
-    right: 710px; /* Move the container in from the right of the viewport */
-    width: auto; /* Auto width */
-    height: auto; /* Auto height */
-}
-
-#dropdownMenu {
-    position: absolute; /* Position it relative to the container */
-    top: 166px; /* Adjust this value to move the button up or down */
-    left: 30%; 
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 150px;
-    height: 60px;
-    background-color: #f4e9b8;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border: 2px solid #5b5349;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2; /* Ensure the button is above the background image */
-}
-
-#dropdownMenu:hover {
-    background-color: #DEB887; 
-}
-
-#dropdownMenu-bgimg {
-    position: absolute; /* Position it relative to the container */
-    top: 0; /* Keep at the top of the container */
-    left: 30%; /* Center horizontally in the container */
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 350px; /* Adjust width as needed */
-    height: 350px; /* Adjust height as needed */
-    z-index: 1; /* Ensure the background image is below the button */
-}
-
-#name-input-container {
-    position: fixed; /* Keep the container fixed on the screen */
-    top: 0px; /* Move the entire container down from the top of the viewport */
-    right: 950px; /* Move the container in from the right of the viewport */
-    width: auto; /* Auto width */
-    height: auto; /* Auto height */
-}
-
-#name-input {
-    position: absolute; /* Position it relative to the container */
-    top: 175px; /* Adjust this value to move the button up or down */
-    left: 90%; 
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 150px;
-    height: 60px;
-    background-color: #f4e9b8;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    border: 2px solid #5b5349;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2; /* Ensure the button is above the background image */
-}
-
-#name-input:hover {
-    background-color: #DEB887; 
-}
-
-#name-input-bgimg {
-    position: absolute; /* Position it relative to the container */
-    top: 0; /* Keep at the top of the container */
-    left: 90%; 
-    transform: translateX(-50%); /* Offset to perfectly center */
-    width: 350px; /* Adjust width as needed */
-    height: 350px; /* Adjust height as needed */
-    z-index: 1; /* Ensure the background image is below the button */
-}
-
-
-
-
-
-#sketch-holder {
-  position: fixed;
-  bottom: 0;
-  left: 50%;               /* Move the element to the center horizontally */
-  transform: translateX(-50%); /* Pull it back by half its width to center */
-  width: 100%;
-}
+  }
+  
+  #send-button:hover, #screenshot-button:hover {
+    background-color: #DEB887;
+  }
+  
